@@ -72,7 +72,7 @@ For now, you can run the application to see some animated octocats. They are che
 ---
  There are a few URL strings you will need for OAuth related requests. The `GitHubAPIClient` has a handy enum called `URLRouter` that keeps them organized in one place. An example usage is `let urlString = GitHubAPIClient.URLRouter.oauth`.
 
-  * Add the following code snippet inside the body of the `URLRouter` enum. Check out [Git Hub](https://developer.github.com/v3/oauth/) to learn about how `.oath` was constructed and what `.token` is for. You will update the static `starred(repoName:)` later to include your user's access token.
+  * Add the following code snippet inside the body of the `URLRouter` enum. Check out [GitHub](https://developer.github.com/v3/oauth/) to learn about how `.oath` was constructed and what `.token` is for. You will update the static `starred(repoName:)` later to include your user's access token.
 
   ```swift
   static let repo = "https://api.github.com/repositories?client_id=\(Secrets.clientID)&client_secret=\(Secrets.clientSecret)"
