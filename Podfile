@@ -8,6 +8,7 @@ target 'GitHubOAuth' do
   # Pods for GitHubOAuth
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Locksmith'
 
 end
 
