@@ -9,16 +9,12 @@
 import UIKit
 import Locksmith
 
-// SOLUTION: import safari services, add delegate
-import SafariServices
-
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginImageView: UIImageView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var imageBackgroundView: UIView!
     
-    var safariVC: SFSafariViewController?
     let numberOfOctocatImages = 10
     var octocatImages: [UIImage] = []
     
@@ -26,8 +22,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setUpImageViewAnimation()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.safariLogin(_:)), name: Notification.closeSafariVC, object: nil)
 
     }
     
@@ -41,27 +35,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButtonTapped(sender: UIButton) {
-        
-        presentSafariViewController()
     
-    }
-    
-    private func presentSafariViewController() {
-        
-        guard let authURL = NSURL(string: GitHubAPIClient.URLRouter.oauth) else {return}
-        self.safariVC = SFSafariViewController(URL: authURL)
-        guard let safariVC = self.safariVC else {return}
-        let navigationController = UINavigationController(rootViewController: safariVC)
-        navigationController.setNavigationBarHidden(true, animated: false)
-        presentViewController(navigationController, animated: true, completion: nil)
-        
-    }
-    
-    func safariLogin(notification: NSNotification) {
-        
-        print(notification.object?.absoluteURL)
-        self.safariVC!.dismissViewControllerAnimated(true, completion: nil)
-
     }
     
 }

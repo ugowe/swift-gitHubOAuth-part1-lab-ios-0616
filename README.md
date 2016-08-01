@@ -72,7 +72,7 @@ For now, you can run the application to see some animated octocats. They are che
 ---
  There are a few URL strings you will need for OAuth related requests. The `GitHubAPIClient` has a handy enum called `URLRouter` that keeps them organized in one place. An example usage is `let urlString = GitHubAPIClient.URLRouter.oauth`.
 
-  * Add the following code snippet inside the body of the `URLRouter` enum. Check out [GitHub](https://developer.github.com/v3/oauth/) to learn about how `.oath` was constructed and what `.token` is for. You will update the static `starred(repoName:)` later to include your user's access token.
+  * Replace the existing code inside the body of the `URLRouter` enum with the following code snippet. Check out [GitHub](https://developer.github.com/v3/oauth/) to learn about how `.oath` was constructed and what `.token` is for. You will update the static `starred(repoName:)` later to include your user's access token.
 
   ```swift
   static let repo = "https://api.github.com/repositories?client_id=\(Secrets.clientID)&client_secret=\(Secrets.clientSecret)"
@@ -94,7 +94,7 @@ For now, you can run the application to see some animated octocats. They are che
  * Locate the `loginButtonTapped(_:)` IBAction method in the `LoginViewController` class.
  * Inside the method, use `GitHubAPIClient.URLRouter.oath` to create an `NSURL` and initialize a `SFSafariViewController` using the url.
   * *Note:* The safari view controller streamlines the process of directing a user to GitHub by providing easy access to a stripped down version of the Safari web browser.
-  * **Hint:** You will need a reference to the safari view controller from a couple of methods within the `LoginViewController` class.
+  * **Hint:** Import the Safari Services framework to use `SFSafariViewController`. Also, you will need a reference to the safari view controller from a couple of methods within the `LoginViewController` class.
  * Present the controller.
  * Run the application to see if your safari view controller is presented when the login button is tapped (Don't bother entering your GitHub credentials yet).
  * Stop the application.
