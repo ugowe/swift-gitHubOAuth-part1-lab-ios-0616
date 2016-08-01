@@ -16,8 +16,6 @@ class GitHubAPIClient {
     // MARK: Path Router
     enum URLRouter {
         static let repo = "https://api.github.com/repositories?client_id=\(Secrets.clientID)&client_secret=\(Secrets.clientSecret)"
-//        static let tokenURL = ""
-//        static let oauthURL = ""
         static let token = "https://github.com/login/oauth/access_token"
         static let oauth = "https://github.com/login/oauth/authorize?client_id=\(Secrets.clientID)&scope=repo"
         
@@ -25,9 +23,8 @@ class GitHubAPIClient {
             
             let starredURL = "https://api.github.com/user/starred/\(repo)?client_id=\(Secrets.clientID)&client_secret=\(Secrets.clientSecret)&access_token="
             
-//            if let token = GitHubAPIClient.getAccessToken() {
-//                return starredURL + token
-//            }
+            // TO DO: Append URL string with access token
+            
             return nil
         }
     }
@@ -61,88 +58,11 @@ extension GitHubAPIClient {
 // MARK: OAuth
 extension GitHubAPIClient {
     
-    class func startAccessTokenRequest(url url: NSURL, completionHandler: (Bool) -> ()) {
-        
-//        guard let code = url.getQueryItemValue(named: "code") else {return}
-//        
-//        let params = ["client_id": Secrets.clientID, "client_secret": Secrets.clientSecret, "code": code]
-//        
-//        Alamofire.request(.POST, URLRouter.token, parameters: params)
-//            .validate()
-//            .responseString(completionHandler: { response in
-//                switch response.result {
-//                case .Success:
-//                    
-//                    self.saveAccessTokenFrom(response: response.result.value, completionHandler: { success in
-//                        if success {
-//                            completionHandler(true)
-//                        } else {
-//                            print("ERROR: Unable to save access token")
-//                            completionHandler(false)
-//                        }
-//                        
-//                    })
-//                    
-//                case .Failure(let error):
-//                    print("\nERROR: \(error.localizedDescription)")
-//                    completionHandler(false)
-//                }
-//            })
-        
-    }
-    
-    private class func saveAccessTokenFrom(response response: String?, completionHandler: (Bool) -> ()) {
-        
-//        let params = response?.componentsSeparatedByString("&").first
-//        guard let token = params?.componentsSeparatedByString("=").last else {
-//            completionHandler(false)
-//            return
-//        }
-//        
-//        do {
-//            try Locksmith.saveData(["token": token], forUserAccount: "github")
-//            completionHandler(true)
-//        } catch let error {
-//            print("ERROR: \(error)")
-//            completionHandler(false)
-//            return
-//        }
-        
-    }
-    
-    private class func getAccessToken() -> String? {
-        
-//        if let data = Locksmith.loadDataForUserAccount("github") {
-//            print(data["token"] as? String)
-//            return data["token"] as? String
-//        }
-        return nil
-        
-    }
-    
-    class func deleteAccessToken(completionHandler: (Bool) -> ()) {
-        
-//        do {
-//            try Locksmith.deleteDataForUserAccount("github")
-//            completionHandler(true)
-//        } catch let error {
-//            print("ERROR: \(error)")
-//            completionHandler(false)
-//        }
-        
-    }
     
     class func hasToken() -> Bool {
         
-//        let token = getAccessToken()
-//        if token != nil {
-//            return true
-//        }
         return false
     }
-    
-    
-
     
 }
 

@@ -22,14 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // SOLUTION: handle url
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
         
-//        print("\napplication delegate open url called\noption: \(options)")
-//        if let sourceAppKey = options["UIApplicationOpenURLOptionsSourceApplicationKey"] {
-//            
-//            if (String(sourceAppKey) == "com.apple.SafariViewService") {
-//                NSNotificationCenter.defaultCenter().postNotificationName(Notification.closeSafariVC, object: url)
-//                return true
-//            }
-//        }
+        if let sourceAppKey = options["UIApplicationOpenURLOptionsSourceApplicationKey"] {
+            
+            if (String(sourceAppKey) == "com.apple.SafariViewService") {
+                NSNotificationCenter.defaultCenter().postNotificationName(Notification.closeSafariVC, object: url)
+                return true
+            }
+        }
         return true
     }
 

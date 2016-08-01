@@ -19,7 +19,7 @@ class ReposDataStore {
     func getRepositoriesWithCompletion(completion: (Bool) -> ()) {
         
         GitHubAPIClient.getRepositoriesWithCompletion { json in
-            print(json)
+    
             guard let json = json else {
                 print("ERROR: JSON data was not received by data store")
                 completion(false)

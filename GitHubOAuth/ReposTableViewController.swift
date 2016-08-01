@@ -14,13 +14,11 @@ class ReposTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view did load")
 
         self.title = "Repositories"
         
         store.getRepositoriesWithCompletion { success in
             if success {
-                print("success")
                 NSOperationQueue.mainQueue().addOperationWithBlock({ 
                     self.tableView.reloadData()
                 })
@@ -44,14 +42,6 @@ class ReposTableViewController: UITableViewController {
 
     @IBAction func logoutButtonTapped(sender: AnyObject) {
         
-//        GitHubAPIClient.deleteAccessToken { success in
-//            if success {
-//                print("deleted token")
-//                NSNotificationCenter.defaultCenter().postNotificationName(Notification.closeReposTVC, object: nil)
-//            } else {
-//                print("ERROR: Unable to delete access token")
-//            }
-//        }
     }
 
 }

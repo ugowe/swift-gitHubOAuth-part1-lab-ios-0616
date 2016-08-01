@@ -27,9 +27,8 @@ class LoginViewController: UIViewController {
         
         setUpImageViewAnimation()
         
-        // SOLUTION: Add observer for close Safari notification
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.safariLogin(_:)), name: Notification.closeSafariVC, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(<#T##observer: AnyObject##AnyObject#>, selector: <#T##Selector#>, name: <#T##String?#>, object: <#T##AnyObject?#>)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.safariLogin(_:)), name: Notification.closeSafariVC, object: nil)
+
     }
     
     override func viewDidLayoutSubviews() {
@@ -43,43 +42,25 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(sender: UIButton) {
         
-        // SOLUTION: present safari VC
         presentSafariViewController()
     
     }
     
-    // SOLUTION: present safari VC
     private func presentSafariViewController() {
         
-//        guard let authURL = NSURL(string: GitHubAPIClient.URLRouter.oauth) else {return}
-//        self.safariVC = SFSafariViewController(URL: authURL)
-//        guard let safariVC = self.safariVC else {return}
-//        let navigationController = UINavigationController(rootViewController: safariVC)
-//        navigationController.setNavigationBarHidden(true, animated: false)
-//        presentViewController(navigationController, animated: true, completion: nil)
-//        print("present safari view controller")
+        guard let authURL = NSURL(string: GitHubAPIClient.URLRouter.oauth) else {return}
+        self.safariVC = SFSafariViewController(URL: authURL)
+        guard let safariVC = self.safariVC else {return}
+        let navigationController = UINavigationController(rootViewController: safariVC)
+        navigationController.setNavigationBarHidden(true, animated: false)
+        presentViewController(navigationController, animated: true, completion: nil)
         
     }
     
     func safariLogin(notification: NSNotification) {
         
-//        print("receive safari login notification")
-//        self.safariVC!.dismissViewControllerAnimated(true) { 
-//            
-//            guard let url = notification.object?.absoluteURL else {
-//                print("ERROR: Unable to receive URL from notification")
-//                return
-//            }
-//            
-//            GitHubAPIClient.startAccessTokenRequest(url: url, completionHandler: { success in
-//                if success {
-//                    NSNotificationCenter.defaultCenter().postNotificationName(Notification.closeLoginVC, object: nil)
-//                } else {
-//                    print("ERROR: token request failed")
-//                }
-//            })
-//            
-//        }
+        print(notification.object?.absoluteURL)
+        self.safariVC!.dismissViewControllerAnimated(true, completion: nil)
 
     }
     
