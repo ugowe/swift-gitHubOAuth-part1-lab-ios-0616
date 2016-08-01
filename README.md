@@ -35,7 +35,7 @@ This project is similar to the previous GitHub related labs, however it has been
   * `LoginViewController` class directs the user for authorization and authentication.
   * `ReposTableViewController` class displays repositories and allows starring.  
  * Utility
-  * `GitHubAPIClient` class interacts with the Git Hub API.
+  * `GitHubAPIClient` class interacts with the GitHub API.
   * `Extensions` contains a `NSURL` extension for parsing query items.
   * `Constants` contains structs for notifications and storyboard IDs.
   * `Secrets` (you will need to add this file).
@@ -48,7 +48,7 @@ For now, you can run the application to see some animated octocats. They are che
 
 ### 1. Set up your callback URL
 ---
- * Head on over to [Git Hub](https://github.com).
+ * Head on over to [GitHub](https://github.com).
  * If you don't have a **Client ID** and a **Client Secret** set up from previous labs, go to Settings > OAuth Applications > Developer Applications > Register and start registering your new application.
  * Whether you are registering a new application or have your application selected, find the header at the bottom of the form titled **Authoriation callback URL**.
  * Enter some text following this format: `gitHubOAuthLab-12345://callback`. The first section, `gitHubOAuthLab-12345`, can be whatever you want. It's intended to be unique to your application.
@@ -99,7 +99,7 @@ For now, you can run the application to see some animated octocats. They are che
  * Run the application to see if your safari view controller is presented when the login button is tapped (Don't bother entering your GitHub credentials yet).
  * Stop the application.
 
-### 5. Handle the callback from Git Hub
+### 5. Handle the callback from GitHub
 ---
 In the previous step the user is directed to GitHub using a safari view controller to provide authorization. Once the user successfully completes authorization, the callback you provided in your GitHub account is used to trigger the URL Scheme you provided in your project settings. Additionally, the safari view controller calls a `UIApplicatioDelegate` method called `application(_:open:options:)` that passes a URL containing a temporary code received from the GitHub callback.
 
@@ -121,7 +121,7 @@ Here are the two notification statements you will use in your application:
 Now that you are a notification's expert, let's continue.
 
  * In the previous step you verified the value, `"com.apple.SafariViewService"` and returned `true`. Add a post notification immediately before the return. Use your `Notifications` struct from your `Constants` file to provide the name `.closeSafariVC`. Pass the value from the incoming `url` argument to the `object` parameter of the notification.
-  * *Note:* As mentioned above, the incoming `url` argument value contains a temporary code that we need to proceed with the Git Hub authentication process.
+  * *Note:* As mentioned above, the incoming `url` argument value contains a temporary code that we need to proceed with the GitHub authentication process.
  * Head back to the `LoginViewController` class and add a method called `safariLogin` that takes one argument called `notification` of type `NSNotification` and returns nothing.
  * Add a notification observer inside `viewDidLoad()` of the `LoginViewController` class.
   * The observer is the `LoginViewController`.
@@ -130,7 +130,7 @@ Now that you are a notification's expert, let's continue.
   * The object is nil.
  * Add a print statement in the `safariLogin(_:)` method that prints the notification.
  * Dismiss the safari view controller.
- * Run the application, provide your credentials to Git Hub in the safari view controller, and authorize the application.
+ * Run the application, provide your credentials to GitHub in the safari view controller, and authorize the application.
   * The notification should print to the debugger and the safari view controller should be dismissed.
 
 That's all... for now.
