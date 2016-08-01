@@ -1,8 +1,8 @@
 //
-//  FISGitHubAPIClient.swift
-//  github-repo-list-swift
+//  GitHubAPIClient.swift
+//  GitHubOAuth
 //
-//  Created by Haaris Muneer on 6/28/16.
+//  Created by Joel Bell on 7/31/16.
 //  Copyright © 2016 Flatiron School. All rights reserved.
 //
 
