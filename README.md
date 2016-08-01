@@ -113,10 +113,10 @@ Here are the two notification statements you will use in your application:
 
  ```swift
  // Post notification
- NSNotificationCenter.defaultCenter().postNotificationName(<name>, object: <object>)
+ NSNotificationCenter.defaultCenter().postNotificationName(_:object:)
 
  // Add observer
- NSNotificationCenter.defaultCenter().addObserver(<who>, selector: <method to call>, name: <name>, object: <object>)
+ NSNotificationCenter.defaultCenter().addObserver(_:selector:name:object:)
  ```
 Now that you are a notification's expert, let's continue.
 
