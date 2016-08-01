@@ -128,9 +128,10 @@ Now that you are a notification's expert, let's continue.
   * The selector is the method you just created above.
   * The name is the name you used for the post notification in the app delegate.
   * The object is nil.
- * Add a print statement in the `safariLogin(_:)` method that prints the notification.
+ * Inside `safariLogin(_:)` get the absolute URL value from the notification argument and print it in the debugger.
+  * *Hint:* Explore the properties on `notification`.
  * Dismiss the safari view controller.
  * Run the application, provide your credentials to GitHub in the safari view controller, and authorize the application.
-  * The notification should print to the debugger and the safari view controller should be dismissed.
+  * The URL containing the temporary code should print to the debugger and the safari view controller should be dismissed.
 
-That's all... for now.
+See you in Part II!
