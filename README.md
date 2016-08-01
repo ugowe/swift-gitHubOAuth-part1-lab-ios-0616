@@ -14,7 +14,7 @@ The process of implementing the protocol requires joint effort from the applicat
 
  1. Register your application with GitHub to receive a **Client ID** and a **Client Secret**.
  2. Set up an **Authorization callback URL** on GitHub.
- 3. Set up a **URL Scheme** in your application.
+ 3. Set up a **URL Scheme** in Xcode for your application.
  4. Direct user at login to GitHub for authorization.  
  5. Handle callback from GitHub containing a temporary **code**.
  6. Use **code** to authenticate user and receive **access token**.
