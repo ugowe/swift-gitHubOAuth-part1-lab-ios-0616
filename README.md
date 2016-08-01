@@ -93,7 +93,7 @@ For now, you can run the application to see some animated octocats. They are che
 
  * Locate the `loginButtonTapped(_:)` IBAction method in the `LoginViewController` class.
  * Inside the method, use `GitHubAPIClient.URLRouter.oath` to create an `NSURL` and initialize a `SFSafariViewController` using the url.
-  * *Note:* The safari view controller streamlines the process of directing a user to GitHub by providing easy access to a stripped down version of Safari.
+  * *Note:* The safari view controller streamlines the process of directing a user to GitHub by providing easy access to a stripped down version of the Safari web browser.
   * **Hint:** You will need a reference to the safari view controller from a couple of methods within the `LoginViewController` class.
  * Present the controller.
  * Run the application to see if your safari view controller is presented when the login button is tapped (Don't bother entering your Git Hub credentials yet).
