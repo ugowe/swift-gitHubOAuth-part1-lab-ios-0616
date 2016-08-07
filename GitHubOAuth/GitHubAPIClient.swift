@@ -15,11 +15,17 @@ class GitHubAPIClient {
     
     // MARK: Path Router
     enum URLRouter {
-        static let repo = ""
-        static let token = ""
-        static let oauth = ""
+        static let repo = "https://api.github.com/repositories?client_id=\(Secrets.clientID)&client_secret=\(Secrets.clientSecret)"
+        static let token = "https://github.com/login/oauth/access_token"
+        static let oauth = "https://github.com/login/oauth/authorize?client_id=\(Secrets.clientID)&scope=repo"
         
-        static func starred(repoName repo: String) -> String? {return nil}
+        static func starred(repoName repo: String) -> String? {
+            
+            let starredURL = "https://api.github.com/user/starred/\(repo)?client_id=\(Secrets.clientID)&client_secret=\(Secrets.clientSecret)&access_token="
+            
+            // TO DO: Add access token to starredURL string and return
+            return nil
+        }
     }
 
 }

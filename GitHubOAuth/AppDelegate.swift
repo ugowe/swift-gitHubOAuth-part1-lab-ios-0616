@@ -18,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        
+        guard let sourceID = options["UIApplicationOpenURLOptionsSourceApplicationKey"] as? String else {fatalError("Unable to get proper URL"); return false}
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(Notification.closeSafariVC, object: url)
+        
+        return sourceID == "com.apple.SafariViewService"
+    }
 
 
 }

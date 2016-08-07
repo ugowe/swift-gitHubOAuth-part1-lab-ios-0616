@@ -25,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>gitHubOAuthLab-12345</string>
+				<string>gitHubOAuthLab-fire</string>
 			</array>
 		</dict>
 	</array>

@@ -12,7 +12,7 @@ import SwiftyJSON
 class ReposDataStore {
     
     static let sharedInstance = ReposDataStore()
-    private init() {}
+    private init() {} // What does this do?
     
     var repositories:[Repo] = []
     
